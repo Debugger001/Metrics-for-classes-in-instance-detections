@@ -1,1 +1,5 @@
 PASCAL_VOC2012_DIR = '/Users/pro/Desktop/Lab/Dataset/Pascal-VOC/2012/VOCdevkit/VOC2012'
+JPEGIMG_DIR = '/JPEGImages'
+ANNOTATION_DIR = '/Annotations'
+SEM_MASK_DIR = '/SegmentationClass'
+INS_MASK_DIR = '/SegmentationObject'
