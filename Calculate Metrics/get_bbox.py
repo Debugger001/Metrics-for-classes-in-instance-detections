@@ -33,10 +33,10 @@ def read_xml_file(xml_file):
         # print(str(ymin))
         # break
         instance.append(insclass)
-        instance.append(xmax)
-        instance.append(ymax)
-        instance.append(xmin)
-        instance.append(ymin)
+        instance.append(int(xmax))
+        instance.append(int(ymax))
+        instance.append(int(xmin))
+        instance.append(int(ymin))
         instances.append(instance)
     return instances
 xml_file = '/Users/pro/Desktop/Lab/Dataset/Pascal-VOC/2012/VOCdevkit/VOC2012/Annotations/2012_002004.xml'
