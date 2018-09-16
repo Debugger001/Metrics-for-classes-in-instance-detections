@@ -10,7 +10,7 @@ import cv2
 from default import *
 from get_bbox import read_xml_file
 
-def calculate_precision(img_file):
+def calculate_precision_recall(img_file):
     '''
         Args: the file name of the images, without the file extension.
     '''
@@ -42,11 +42,10 @@ def calculate_precision(img_file):
             TP[ORDER_DIC[instance_class]] += 1
         if iou < THRESHOLD:
             FP[ORDER_DIC[instance_class]] += 1
-            FN[ORDER_DIC[instance_class]] += 1
         # for jj in range(xmin, xmax):
         #     sem_img_np[ymin][jj] = (255, 255, 255)
         #     sem_img_np[ymax - 1][jj] = (255, 255, 255)
-        # for ii in range(ymin, ymax):
+        # for ii in range(ymin, ymax):2
         #     sem_img_np[ii][xmin] = (255, 255, 255)
         #     sem_img_np[ii][xmax - 1] = (255, 255, 255)
         print(instance_class)
@@ -55,5 +54,27 @@ def calculate_precision(img_file):
         if TP[i] + FP[i] > 0:
             precision[i] = TP[i] / (TP[i] + FP[i])
             recall[i] = TP[i] / (TP[i] + FN[i])
+
     # cv2.imwrite("test.jpg", sem_img_np)
-calculate_precision('2007_000129')
+
+    return precision, recall
+
+def calculate_ap():
+    IMG_PATH = PASCAL_VOC2012_DIR + SEM_MASK_DIR
+    list = os.listdir(IMG_PATH)
+    precisions = []
+    recalls = []
+    for img in list:
+        img_file = img.split('.')[0]
+        precision = []
+        recall = []
+        precision, recall = calculate_precision_recall(img_file)
+        precisions.append(precision)
+        recalls.append(recall)
+    return precisions, recalls
+
+
+# calculate_precision_recall('2007_000129')
+precisions, recalls = calculate_ap()
+print(len(precisions))
+print(precisions[0])
