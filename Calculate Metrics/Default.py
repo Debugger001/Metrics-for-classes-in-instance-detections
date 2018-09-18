@@ -26,7 +26,7 @@ COLOR_DIC = {
 "sheep": (128,64,0),
 "sofa": (0,192,0),
 "train": (128,192,0),
-"monitor": (0,64,128)
+"tvmonitor": (0,64,128)
 }
 
 ORDER_DIC = {
@@ -49,5 +49,5 @@ ORDER_DIC = {
 "sheep": 16,
 "sofa": 17,
 "train": 18,
-"monitor": 19
+"tvmonitor": 19
 }

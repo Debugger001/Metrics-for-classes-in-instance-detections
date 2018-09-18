@@ -39,5 +39,5 @@ def read_xml_file(xml_file):
         instance.append(int(ymin))
         instances.append(instance)
     return instances
-xml_file = '/Users/pro/Desktop/Lab/Dataset/Pascal-VOC/2012/VOCdevkit/VOC2012/Annotations/2012_002004.xml'
-read_xml_file(xml_file)
+# xml_file = '/Users/pro/Desktop/Lab/Dataset/Pascal-VOC/2012/VOCdevkit/VOC2012/Annotations/2012_002004.xml'
+# read_xml_file(xml_file)
